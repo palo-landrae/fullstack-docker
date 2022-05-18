@@ -14,6 +14,10 @@ RUN npm i -g @angular/cli
 # Add the source code to app
 COPY . .
 
+# env
+ARG GITPOD_WORKSPACE_URL=${GITPOD_WORKSPACE_URL:-""}
+ENV NG_APP_GITPOD_WORKSPACE_URL=${GITPOD_WORKSPACE_URL}
+
 # Generate the build of the application
 RUN npm run build
 
