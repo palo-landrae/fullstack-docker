@@ -1,10 +1,4 @@
-version: '3.7'
-
-#setta alcune variabili d'ambiente
-x-common-variables: &mongo-variables
-  - MONGO_INITDB_DATABASE=animal_db
-  - MONGO_INITDB_ROOT_USERNAME=root
-  - MONGO_INITDB_ROOT_PASSWORD=pass
+version: '2.5'
 
 services:
   client:
