@@ -1,11 +1,8 @@
 FROM python:3.8-slim
 
-RUN mkdir '/app_server'
-
-WORKDIR '/app_server'
+WORKDIR '/app'
 
 COPY ./requirements.txt ./
-
 RUN pip install -r requirements.txt
 
 COPY . .
