@@ -1,0 +1,6 @@
+ports:
+  - port: 80
+    onOpen: open-browser
+  - port: 5000
+    visibility: public
+    onOpen: ignore
