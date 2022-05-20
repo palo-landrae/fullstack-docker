@@ -8,10 +8,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'frontend';
 
   tmp_server_url = process.env.NG_APP_GITPOD_WORKSPACE_URL;
-  server_url = this.tmp_server_url.substr(8);
+  port = 5000
+  server_url = `${this.tmp_server_url.substring(0,8)}${this.port}-${this.tmp_server_url.substring(8)}`;
 
   obsData: Observable<object>;
 
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   data: any = {};
 
   ngOnInit(): void {
-    this.obsData = this.http.get(`https://5000-${this.server_url}/api/user/1`);
+    this.obsData = this.http.get(`${this.server_url}/api/user/1`);
     this.obsData.subscribe((data) => (this.data = data));
   }
 }
